@@ -1,18 +1,8 @@
-dist
-tmp
-out-tsc
+node_modules/
+dist/
+packages/*/docs-*
+**/.angular/cache/
 
-node_modules
-
-/.angular/cache
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
 npm-debug.log
 yarn-error.log
-testem.log
-/typings
-
 .DS_Store
-Thumbs.db
