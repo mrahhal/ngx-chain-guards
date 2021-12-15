@@ -1,0 +1,49 @@
+{
+  "name": "ngx-chain-guards",
+  "version": "0.1.0",
+  "description": "An angular guard that chains other guards, waiting for each one to complete before proceeding to the next.",
+  "keywords": [
+    "angular",
+    "guard",
+    "chain",
+    "async"
+  ],
+  "bugs": {
+    "url": "https://github.com/mrahhal/ngx-chain-guards/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrahhal/ngx-chain-guards"
+  },
+  "license": "MIT",
+  "author": "Mohammad Rahhal",
+  "files": [
+    "**"
+  ],
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json -c tsconfig.lib.prod.json",
+    "lint": "npx eslint \"src/**/*.ts\"",
+    "check-peer-dependencies": "npx check-peer-dependencies",
+    "prepublishOnly": "npm run build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:ci": "jest --runInBand"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.13",
+    "jest": "^27.4.5",
+    "jest-preset-angular": "^11.0.1"
+  },
+  "peerDependencies": {
+    "@angular/router": ">=13.0.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
+  "distDir": "dist"
+}

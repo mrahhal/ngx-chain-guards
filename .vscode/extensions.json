@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "Angular.ng-template",
+    "dbaeumer.vscode-eslint",
+    "mkaufman.htmlhint",
+    "rbbit.typescript-hero",
+    "stylelint.vscode-stylelint"
+  ]
+}
