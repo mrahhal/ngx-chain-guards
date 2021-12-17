@@ -1,18 +1,20 @@
 name: CI
 
-on: push
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+    tags:
+    - v*
+  pull_request:
+    branches:
+    - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
-    - name: Build
-      run: |
-        npm i
-        npx lerna bootstrap
-        npx lerna run build
+  main:
+    uses: mrahhal/.github/.github/workflows/ci-node-package-lerna.yml@main
+    with:
+      node-version: 16
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
