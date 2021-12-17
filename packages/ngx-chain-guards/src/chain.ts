@@ -14,7 +14,7 @@ type GuardResult = Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | 
  * @returns The result of the first guard that returns `false` or an instance of a `UrlTree`, otherwise `true`.
  */
 export async function chain(
-  method: string,
+  method: 'canActivate' | 'canDeactivate' | 'canActivateChild',
   injector: Injector,
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot,
