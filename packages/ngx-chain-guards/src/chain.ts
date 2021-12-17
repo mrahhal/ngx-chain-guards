@@ -16,13 +16,18 @@ type GuardResult = Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | 
 export async function chain(
   method: 'canActivate' | 'canDeactivate' | 'canActivateChild',
   injector: Injector,
-  route: ActivatedRouteSnapshot,
+  route: Partial<ActivatedRouteSnapshot>,
   state: RouterStateSnapshot,
   component?: any,
 ): Promise<boolean | UrlTree> {
   const guards: ProviderToken<any>[] = route.data?.guards ?? [];
   const specificGuardsKey = `${method}Guards`;
   guards.push(...(route.data?.[specificGuardsKey] ?? []));
+
+  if (!guards.length) {
+    console.warn(`You specified ChainGuards in route '${route.routeConfig?.path}' but couldn't find configured guards to chain.`);
+    return true;
+  }
 
   for (const guard of guards) {
     const guardInstance: any = injector.get(guard);
