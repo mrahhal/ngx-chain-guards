@@ -10,9 +10,10 @@ Can be used with `canActivate`, `canActivateChild`, `canDeactivate`.
 
 ## Usage
 
-In a route:
-
 ```ts
+import { ChainGuards } from 'ngx-chain-guards';
+
+// In the route config:
 {
   path: '...',
   data: {
@@ -29,6 +30,9 @@ In a route:
 If you have different guards you want to chain for different methods:
 
 ```ts
+import { ChainGuards } from 'ngx-chain-guards';
+
+// In the route config:
 {
   path: '...',
   data: {
