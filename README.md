@@ -36,7 +36,7 @@ import { ChainGuards } from 'ngx-chain-guards';
 {
   path: '...',
   data: {
-    canActivateGuards: [SomeGuard1, SomeGuard2, ...]
+    canActivateGuards: [SomeGuard1, SomeGuard2, ...],
     canDeactivateGuards: [AnotherGuard, ...]
   },
   canActivate: [ChainGuards],
