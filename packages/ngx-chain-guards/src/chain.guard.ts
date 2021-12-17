@@ -23,15 +23,15 @@ import { chain } from './chain';
 export class ChainGuards implements CanActivate, CanDeactivate<any>, CanActivateChild {
   constructor(private _injector: Injector) { }
 
-  async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     return chain('canActivate', this._injector, route, state);
   }
 
-  async canDeactivate(component: any, route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+  canDeactivate(component: any, route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     return chain('canDeactivate', this._injector, route, state, component);
   }
 
-  async canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+  canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     return chain('canActivateChild', this._injector, route, state);
   }
 }
