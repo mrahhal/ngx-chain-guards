@@ -30,7 +30,8 @@ export async function chain(
   }
 
   for (const guard of guards) {
-    const guardInstance: any = injector.get(guard);
+    // To support tests providing out instances.
+    const guardInstance: any = typeof guard == 'function' ? injector.get(guard) : guard;
 
     let result: GuardResult = component == undefined ?
       await guardInstance[method](route, state) :
