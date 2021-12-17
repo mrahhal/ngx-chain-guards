@@ -20,9 +20,9 @@ export async function chain(
   state: RouterStateSnapshot,
   component?: any,
 ): Promise<boolean | UrlTree> {
-  const guards: ProviderToken<any>[] = route.data.guards ?? [];
+  const guards: ProviderToken<any>[] = route.data?.guards ?? [];
   const specificGuardsKey = `${method}Guards`;
-  guards.push(...route.data[specificGuardsKey]);
+  guards.push(...(route.data?.[specificGuardsKey] ?? []));
 
   for (const guard of guards) {
     const guardInstance: any = injector.get(guard);
