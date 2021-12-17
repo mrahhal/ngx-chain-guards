@@ -4,8 +4,8 @@ import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanDeactivate, R
 import { chain } from './chain';
 
 /**
- * Chains the defined `data.guards` and waits for each one to fully completes (waits for Observable/promise result) before proceeding to the next.
- * Short circuits the chain and returns the result if a guard returns `false` or `UrlTree`.
+ * Chains the defined `data.guards` on the route and waits for each one to fully completes (waits for Observable/promise result) before proceeding to the next.
+ * Short circuits the chain and returns the result if a guard returns `false` or an instance of a `UrlTree`.
  * If all guards execute without returning `false` or `UrlTree`, this guard will return `true`.
  *
  * Can be used with `canActivate`, `canActivateChild`, `canDeactivate`.

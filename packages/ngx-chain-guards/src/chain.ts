@@ -4,6 +4,15 @@ import { firstValueFrom, Observable } from 'rxjs';
 
 type GuardResult = Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree;
 
+/**
+ * Chains the route configured guards, calling them after each other, waiting for each one before calling the next.
+ * @param method The method on the guard to call.
+ * @param injector The angular injector.
+ * @param route The snapshot of the activated route.
+ * @param state The snapshot of the router state.
+ * @param component The component this guard is acting on. Required when the method is canDeactivate.
+ * @returns The result of the first guard that returns `false` or an instance of a `UrlTree`, otherwise `true`.
+ */
 export async function chain(
   method: string,
   injector: Injector,
