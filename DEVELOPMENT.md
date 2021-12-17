@@ -2,19 +2,23 @@
 
 We use [lerna](https://github.com/lerna/lerna) to publish our packages. We use the fixed versioning mode.
 
-## What changed since last release
+## Releasing
+
+We use https://github.com/mrahhal/release-cycle as a reference when releasing.
+
+### What changed since last release
 
 ```
 npx lerna changed
 ```
 
-## Update version
+### Update version
 
 ```
 npx lerna version [version] --no-git-tag-version --no-push --yes
 ```
 
-## Release
+### Release
 
 Releasing packages is handled through CI when a git version tag is pushed.
 
