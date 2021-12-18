@@ -25,6 +25,7 @@
     "lint": "npx eslint \"src/**/*.ts\"",
     "check-peer-dependencies": "npx check-peer-dependencies",
     "prepublishOnly": "npm run build",
+    "postpublish": "npx cpx -u ../../README.md ./dist/",
     "test": "jest --detectOpenHandles",
     "test:watch": "jest --watch",
     "test:ci": "jest --runInBand"
