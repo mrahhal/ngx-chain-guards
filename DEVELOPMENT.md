@@ -5,6 +5,7 @@ We use [lerna](https://github.com/lerna/lerna) to publish our packages. We use t
 ## Setting up the repo
 
 ```
+npm install
 npx lerna bootstrap
 ```
 
