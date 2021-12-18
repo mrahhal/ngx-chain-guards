@@ -1,6 +1,6 @@
 {
   "name": "ngx-chain-guards",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "An angular guard that chains other guards, waiting for each one to complete before proceeding to the next.",
   "keywords": [
     "angular",
