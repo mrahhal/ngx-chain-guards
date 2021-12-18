@@ -2,6 +2,12 @@
 
 We use [lerna](https://github.com/lerna/lerna) to publish our packages. We use the fixed versioning mode.
 
+## Setting up the repo
+
+```
+npx lerna bootstrap
+```
+
 ## Releasing
 
 We use https://github.com/mrahhal/release-cycle as a reference when releasing.
